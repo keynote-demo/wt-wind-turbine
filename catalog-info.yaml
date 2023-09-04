@@ -1,0 +1,30 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: wt-wind-turbine-app-dev
+  annotations:
+    argocd/app-name: wt-wind-turbine-app-dev
+    backstage.io/kubernetes-id: wt-wind-turbine-app
+    backstage.io/kubernetes-namespace: wt
+    backstage.io/techdocs-ref: dir:.
+    github.com/project-slug: keynote-demo/wt-wind-turbine
+    janus-idp.io/tekton-enabled: 'true'
+  tags:
+    - java
+    - quarkus
+    - maven
+    - workshop
+  links:
+    - url: https://console-openshift-console.apps.keynote.w6gk.p1.openshiftapps.com/dev-pipelines/ns/wt/
+      title: Pipelines
+      icon: web
+    - url: https://console-openshift-console.apps.keynote.w6gk.p1.openshiftapps.com/k8s/ns/wt/deployments/wt-wind-turbine-app
+      title: Deployment
+      icon: web
+    - url: https://devspaces.apps.keynote.w6gk.p1.openshiftapps.com/#https://github.com/keynote-demo/wt-wind-turbine?che-editor=che-incubator/che-code/latest&devfilePath=.devfile-vscode.yaml
+      title: OpenShift Dev Spaces (VS Code)
+      icon: web
+spec:
+  type: service
+  lifecycle: production
+  owner: "user:default/blues-man"
